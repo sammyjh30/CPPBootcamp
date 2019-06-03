@@ -15,7 +15,8 @@
 # *****************************************************
 # Variables to control Makefile operation
 
-CXX = clang++
+# CXX = clang++
+CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra
 
 # ****************************************************

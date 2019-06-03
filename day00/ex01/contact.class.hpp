@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.class.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sammyjh30 <sammyjh30@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:53:09 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/03 13:55:47 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/03 23:36:35 by sammyjh30        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,19 @@
 class contact
 {
     private:
-        int         _index;
-        std::string _firstName;
-        std::string _lastName;
-        std::string _nickname;
-        std::string _login;
-        std::string _postalAddress;
-        std::string _emailAddress;
-        std::string _phoneNumber;
-        std::string _birthdayDate;
-        std::string _favoriteMeal;
-        std::string _underwaerColor;
-        std::string _darkestSecret;
+        std::string firstName;
+        std::string lastName;
+        std::string nickname;
+        std::string login;
+        std::string postalAddress;
+        std::string emailAddress;
+        std::string phoneNumber;
+        std::string birthdayDate;
+        std::string favoriteMeal;
+        std::string underwearColor;
+        std::string darkestSecret;
 
     public:
-        void        setIndex(int);
         void        setFirstName(std::string);
         void        setLastName(std::string);
         void        setNickname(std::string);
@@ -45,7 +43,6 @@ class contact
         void        setFavoriteMeal(std::string);
         void        setUnderwearColor(std::string);
         void        setDarkestSecret(std::string);
-        int         getIndex(void);
         std::string getFirstName(void);
         std::string getLastName(void);
         std::string getNickname(void);
