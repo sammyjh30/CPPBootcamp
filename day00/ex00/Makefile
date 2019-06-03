@@ -6,7 +6,7 @@
 #    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/03 09:02:21 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/03 09:02:25 by shillebr         ###   ########.fr        #
+#    Updated: 2019/06/03 09:52:09 by shillebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,6 @@ obj/megaphone.o: megaphone.cpp
 	$(CXX) $(CXXFLAGS) -c megaphone.cpp -o $@
 
 clean:
-	-rm *.o 
 	-rm -rf obj
 
 fclean: clean

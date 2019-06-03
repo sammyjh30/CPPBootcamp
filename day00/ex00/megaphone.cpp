@@ -6,7 +6,7 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 08:27:36 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/03 09:36:14 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/03 10:09:04 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ int main(int argc, char* argv[]) {
                 argv[i][j] = toupper(argv[i][j]);
                 std::cout<<argv[i][j];
             }
-            std::cout<<" ";
         }
         std::cout<<std::endl;
     }
-    // std::cout<<"Hello"<<std::endl;
     return 0;
 }
