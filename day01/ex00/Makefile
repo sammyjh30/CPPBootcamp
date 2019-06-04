@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
+#    By: sammyjh30 <sammyjh30@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/04 13:36:25 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/04 13:36:56 by shillebr         ###   ########.fr        #
+#    Updated: 2019/06/04 22:17:48 by sammyjh30        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Makefile for Pony
 # Name of the program.
-NAME     := phonebook
+NAME     := pony
 
 # Sources and objects.
 SRCS     := Pony.cpp main.cpp
