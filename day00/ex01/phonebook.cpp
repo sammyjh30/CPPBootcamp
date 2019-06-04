@@ -3,68 +3,69 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammyjh30 <sammyjh30@student.42.fr>        +#+  +:+       +#+        */
+/*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:01:37 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/04 00:03:06 by sammyjh30        ###   ########.fr       */
+/*   Updated: 2019/06/04 07:56:37 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.class.hpp"
+#include "Contact.hpp"
 
-
-void		listPhonebook(contact* phonebook, int index) {
+void		listPhonebook(Contact phonebook[], int index) {
 
 	for (int i = 0; i<index; i++)  {
 		std::cout<<"|   First Name    |"<<std::endl;
+		if (phonebook[i].getPhoneNumber() == (std::string)"test")
+		std::cout<<"test"<<std::endl;
 	}
 
 }
 
-contact		addNewContact() {
-	contact			newContact;
+Contact		addNewContact() {
+	Contact			newContact;
 	std::string		input;
 
-	std::cout<<"Please enter a first name: "<<std::endl;
-	std::cin>>input;
-	newContact.setFirstName(input);
-    std::cout<<"Please enter a last name: "<<std::endl;
-	std::cin>>input;
-	newContact.setLastName(input);
-    std::cout<<"Please enter a nickname: "<<std::endl;
-	std::cin>>input;
-	newContact.setNickname(input);
-    std::cout<<"Please enter a login: "<<std::endl;
-	std::cin>>input;
-	newContact.setLogin(input);
-    std::cout<<"Please enter a postal address: "<<std::endl;
-	std::cin>>input;
-	newContact.setPostalAddress(input);
-    std::cout<<"Please enter a email address: "<<std::endl;
-	std::cin>>input;
-	newContact.setEmailAddress(input);
-    std::cout<<"Please enter a phone nmber: "<<std::endl;
-	std::cin>>input;
-	newContact.setPhoneNumber(input);
-    std::cout<<"Please enter a birthday date: "<<std::endl;
-	std::cin>>input;
-	newContact.setBirthdayDate(input);
-    std::cout<<"Please enter a favorite meal: "<<std::endl;
-	std::cin>>input;
-	newContact.setFavoriteMeal(input);
-    std::cout<<"Please enter a underwear color: "<<std::endl;
-	std::cin>>input;
-	newContact.setUnderwearColor(input);
-    std::cout<<"Please enter a darkest secret: "<<std::endl;
-	std::cin>>input;
-	newContact.setDarkestSecret(input);
+	// std::cout<<"Please enter a first name: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setFirstName(input);
+    // std::cout<<"Please enter a last name: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setLastName(input);
+    // std::cout<<"Please enter a nickname: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setNickname(input);
+    // std::cout<<"Please enter a login: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setLogin(input);
+    // std::cout<<"Please enter a postal address: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setPostalAddress(input);
+    // std::cout<<"Please enter a email address: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setEmailAddress(input);
+    // std::cout<<"Please enter a phone nmber: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setPhoneNumber(input);
+    // std::cout<<"Please enter a birthday date: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setBirthdayDate(input);
+    // std::cout<<"Please enter a favorite meal: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setFavoriteMeal(input);
+    // std::cout<<"Please enter a underwear color: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setUnderwearColor(input);
+    // std::cout<<"Please enter a darkest secret: "<<std::endl;
+	// std::cin>>input;
+	// newContact.setDarkestSecret(input);
 
 	return (newContact);
 }
 
 int     	main() {
 	std::string input;
-	contact phonebook[8];
+	Contact phonebook[8];
 	int i = 0;
 
 	for (;;) {

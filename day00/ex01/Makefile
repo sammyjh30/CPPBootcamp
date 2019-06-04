@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sammyjh30 <sammyjh30@student.42.fr>        +#+  +:+       +#+         #
+#    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/03 09:02:21 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/03 23:46:33 by sammyjh30        ###   ########.fr        #
+#    Updated: 2019/06/04 08:34:30 by shillebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,27 +15,29 @@
 # *****************************************************
 # Variables to control Makefile operation
 
-# CXX = clang++
-CXX = c++
+CXX = clang++
+# CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra
-SRC = phonebook.cpp contact.class.cpp
+SRC = phonebook.cpp Contact.cpp
 OBJ_DIR = obj
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
-HEADERS = contact.class.hpp
+HEADERS = Contact.hpp
 
 NAME = phonebook
 
 # ****************************************************
 # Targets needed to bring the executable up to date
 
+
+
 $(NAME): $(OBJ) $(HEADERS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 # The main.o target can be written more simply
 
-$(OBJ): $(SRC) $(HEADERS)
+$(OBJ): $(SRC)
 	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -c $(SRC) -o $(OBJ)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	-rm *.o 
