@@ -5,49 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/06/03 09:02:21 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/04 11:33:47 by shillebr         ###   ########.fr        #
+#    Created: 2019/06/04 12:40:29 by shillebr          #+#    #+#              #
+#    Updated: 2019/06/04 12:43:32 by shillebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Makefile for Phonebook
-
-# *****************************************************
-# Variables to control Makefile operation
-
-# CXX = clang++
-# # CXX = c++
-# CXXFLAGS = -Wall -Werror -Wextra
-# SRC = phonebook.cpp Contact.cpp
-# OBJ_DIR = obj
-# OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
-# HDR= Contact.hpp
-# NAME = phonebook
-
-# # ****************************************************
-# # Targets needed to bring the executable up to date
-
-
-
-# $(NAME): $(OBJ) $(HDR)
-# 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-
-# # The main.o target can be written more simply
-
-# $(OBJ): $(SRC) $(HDR)
-# 	@mkdir -p $(OBJ_DIR)
-# 	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-# clean:
-# 	-rm *.o 
-# 	-rm -rf $(OBJ_DIR)
-
-# fclean: clean
-# 	-rm $(NAME)
-
-# all: fclean $(NAME)
-
-
 # Name of the program.
 NAME     := phonebook
 

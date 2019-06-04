@@ -6,14 +6,11 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 18:49:04 by sammyjh30         #+#    #+#             */
-/*   Updated: 2019/06/04 07:55:42 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/04 12:43:29 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
-// https://stackoverflow.com/questions/9579930/separating-class-code-into-a-header-and-cpp-file
-// C++ variables are default private
 
 Contact::Contact(void) {return;}
 Contact::~Contact(void) {return;}
