@@ -6,7 +6,7 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 07:27:54 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/04 07:55:50 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/04 09:24:01 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+#include <iomanip>
 
 class Contact {
     private:
