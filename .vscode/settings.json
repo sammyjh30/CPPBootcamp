@@ -53,6 +53,7 @@
 		"clocale": "cpp",
 		"iomanip": "cpp",
 		"__split_buffer": "cpp",
-		"vector": "cpp"
+		"vector": "cpp",
+		"sstream": "cpp"
 	}
 }
