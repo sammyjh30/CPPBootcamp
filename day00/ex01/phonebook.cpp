@@ -6,7 +6,7 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 12:40:03 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/04 12:43:36 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/05 17:47:59 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int			main() {
 				std::getline(std::cin, input);
 				std::cout<<std::endl;
 				index = input[0] - 48;
-				if (input.length() == 1 && input[0] >= '0' && input[0] <= '7' && index <= i) {
+				if (input.length() == 1 && input[0] >= '0' && input[0] <= '7' && index < i) {
 					std::cout<<"firstName: "<<phonebook[index].getFirstName()<<std::endl;
 					std::cout<<"lastName: "<<phonebook[index].getLastName()<<std::endl;
 					std::cout<<"nickname: "<<phonebook[index].getNickname()<<std::endl;

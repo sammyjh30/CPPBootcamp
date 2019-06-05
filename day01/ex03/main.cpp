@@ -6,13 +6,14 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:22:33 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/05 12:38:04 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/05 18:34:57 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieHorde.hpp"
 
-int main(){
-    ZombieHorde(10).announce();
-    return 0;
+int		main(){
+	ZombieHorde horde(10);
+	horde.announce();
+	return 0;
 }

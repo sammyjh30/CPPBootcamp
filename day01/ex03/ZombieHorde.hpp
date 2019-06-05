@@ -6,7 +6,7 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 11:00:34 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/05 12:37:58 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/05 18:21:44 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ZombieHorde
 		~ZombieHorde(void);
 		void			setSize(int);
 		int				getSize(void);
-		Zombie			*horde;
+		Zombie			**horde;
 		void			announce(void);
 
 	private:

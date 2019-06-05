@@ -6,7 +6,7 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 11:03:32 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/05 12:39:29 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/05 18:27:33 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 ZombieHorde::ZombieHorde(int n) {
 	this->setSize(n);
-	this->horde = new Zombie[n];
+	this->horde = new Zombie*[n];
 	for (int i =0; i<n; i++) {
-		this->horde[i].setName(this->gen_random((std::rand() % ( 8 +1 - 2)) + 2));
-		this->horde[i].setType("standard zombie");
-		this->horde[i].setLine("Braiiiiiiinnnssss...");
+		Zombie *nz = new Zombie;
+		nz->setName(this->gen_random((std::rand() % ( 8 +1 - 2)) + 2));
+		nz->setType("standard zombie");
+		nz->setLine("Braiiiiiiinnnssss...");
+		this->horde[i] = nz;
+
 	}
 	return;
 }
 ZombieHorde::~ZombieHorde(void) {
+	for (int i=0; i<this->getSize(); i++) {
+		std::cout<<"Zombie number "<<i<<" has gone."<<std::endl;
+		delete((this->horde[i]));
+	}
 	delete[] horde;
 	std::cout<<"The horde is gone."<<std::endl;
 	return;
@@ -51,6 +58,6 @@ std::string		ZombieHorde::gen_random(int len) {
 
 void			ZombieHorde::announce(void) {
 	for (int i=0; i < this->getSize(); i++) {
-		this->horde[i].announce();
+		this->horde[i]->announce();
 	}
 }
