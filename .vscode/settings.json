@@ -51,6 +51,8 @@
 		"utility": "cpp",
 		"*.tcc": "cpp",
 		"clocale": "cpp",
-		"iomanip": "cpp"
+		"iomanip": "cpp",
+		"__split_buffer": "cpp",
+		"vector": "cpp"
 	}
 }
