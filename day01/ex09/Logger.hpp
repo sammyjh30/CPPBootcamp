@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Logger.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 15:22:47 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/06 11:08:46 by shillebr         ###   ########.fr       */
+/*   Created: 2019/06/06 11:04:51 by shillebr          #+#    #+#             */
+/*   Updated: 2019/06/06 12:29:45 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_A_HPP
-# define HUMAN_A_HPP
-# include "Weapon.hpp"
+#ifndef LOGGER_HPP
+# define LOGGER_HPP
 
-class HumanA
-{
-	public:
-		HumanA(std::string, Weapon&);
-		~HumanA(void);
-		void	attack();
-	
+# include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+
+class Logger {
 	private:
+		void			logToConsole(const std::string);
+		void			logToFile(const std::string);
 		std::string		name;
-		Weapon&			weapon;
+		std::string		makeLogEntry(std::string);
+
+	public:
+		Logger(void);
+		~Logger(void);
+		void			setName(std::string);
+		std::string		getName(void);
+		void			log(std::string const & dest, std::string const & message);
 };
 
 #endif

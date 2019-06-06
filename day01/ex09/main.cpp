@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 15:22:47 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/06 11:08:46 by shillebr         ###   ########.fr       */
+/*   Created: 2019/06/06 11:04:45 by shillebr          #+#    #+#             */
+/*   Updated: 2019/06/06 12:24:02 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_A_HPP
-# define HUMAN_A_HPP
-# include "Weapon.hpp"
+#include "Logger.hpp"
 
-class HumanA
-{
-	public:
-		HumanA(std::string, Weapon&);
-		~HumanA(void);
-		void	attack();
+int		main(void) {
+	Logger log;
+
+	log.setName("LogFile");
+	log.log("file", "This is a test.");
+	log.log("file", "This is another test.");
+	log.log("file", "This is another test.");
 	
-	private:
-		std::string		name;
-		Weapon&			weapon;
-};
+	log.log("console", "This is a test.");
+	log.log("console", "This is another test.");
+	log.log("console", "This is another test.");
 
-#endif
+	return (0);
+}

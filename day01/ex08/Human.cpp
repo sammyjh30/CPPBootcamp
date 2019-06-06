@@ -6,7 +6,7 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 09:12:22 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/06 11:01:33 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/06 11:28:02 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	Human::meleeAttack(std::string const & target) {
 	std::cout<<"Melee attack made to "<<target<<std::endl;
-
 }
 void	Human::rangedAttack(std::string const & target) {
 	std::cout<<"Ranged attack made to "<<target<<std::endl;
