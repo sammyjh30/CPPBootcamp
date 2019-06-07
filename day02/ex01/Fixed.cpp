@@ -6,14 +6,14 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 07:02:47 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/07 13:08:55 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/07 13:37:28 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed(void) {
-	std::cout<<"Default construction started."<<std::endl;
+	std::cout<<"Default constructor called"<<std::endl;
 	this->_fixedPointValue = 0;
 	return ;
 }
