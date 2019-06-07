@@ -6,7 +6,7 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 07:03:03 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/07 13:09:38 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/07 15:28:45 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Fixed
 
 	public:
 		Fixed(void);					//simple constructor
+		Fixed(const int);
+		Fixed(const float);
 		Fixed(const Fixed &obj);		//copy constructor
 		~Fixed();						//destructor
 		Fixed	&operator=(const Fixed& f); //Need to return reference->memory duplication issue
