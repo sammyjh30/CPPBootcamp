@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/08 11:38:04 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/08 17:36:08 by shillebr         ###   ########.fr       */
+/*   Created: 2019/06/08 15:06:21 by shillebr          #+#    #+#             */
+/*   Updated: 2019/06/08 17:18:51 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-FragTrap::FragTrap(void) : hitPoints(100),
-										maxHitPoints(100),
-										energyPoints(100),
-										maxEnergyPoints(100),
-										level(1),
-										meleeAttackDamage(30),
-										rangedAttackDamage(20),
-										armorDamageReduction(5) 
+ScavTrap::ScavTrap(void) : hitPoints(100),
+							maxHitPoints(100),
+							energyPoints(50),
+							maxEnergyPoints(50),
+							level(1),
+							meleeAttackDamage(20),
+							rangedAttackDamage(15),
+							armorDamageReduction(3) 
 {
 	this->name = "NoNameMadeByPickNPay";
 	std::cout<<"Minion! Your master awakens!"<<std::endl;
 	return;
 }
 
-FragTrap::FragTrap(std::string name) : hitPoints(100),
+ScavTrap::ScavTrap(std::string name) : hitPoints(100),
 										maxHitPoints(100),
 										energyPoints(100),
 										maxEnergyPoints(100),
@@ -40,102 +40,102 @@ FragTrap::FragTrap(std::string name) : hitPoints(100),
 	return;
 }
 
-FragTrap::FragTrap(const FragTrap &obj) {
+ScavTrap::ScavTrap(const ScavTrap &obj) {
 	std::cout<<"Booting sequence complete. Hello! I am your new steward bot. Designation: CL4P-TP"<<std::endl;
 	*this = obj;
 	return ;
 }
 
-FragTrap::~FragTrap() {
+ScavTrap::~ScavTrap() {
 	std::cout<<"I'M DEAD I'M DEAD OHMYGOD I'M DEAD!"<<std::endl;
 	return;
 }
 
-void			FragTrap::setHitPoints(int n) {
+void			ScavTrap::setHitPoints(int n) {
 	this->hitPoints = n;
 }
 
-void			FragTrap::setMaxHitPoints(int n) {
+void			ScavTrap::setMaxHitPoints(int n) {
 	this->maxHitPoints = n;
 }
 
-void			FragTrap::setEnergyPoints(int n) {
+void			ScavTrap::setEnergyPoints(int n) {
 	this->energyPoints = n;
 }
 
-void			FragTrap::setMaxEnergyPoints(int n) {
+void			ScavTrap::setMaxEnergyPoints(int n) {
 	this->maxEnergyPoints = n;
 }
 
-void			FragTrap::setLevel(int n) {
+void			ScavTrap::setLevel(int n) {
 	this->level = n;
 }
 
-void			FragTrap::setMeleeAttackDamage (int n) {
+void			ScavTrap::setMeleeAttackDamage (int n) {
 	this->meleeAttackDamage = n;
 }
 
-void			FragTrap::setRangedAttackDamage (int n) {
+void			ScavTrap::setRangedAttackDamage (int n) {
 	this->rangedAttackDamage = n;
 }
 
-void			FragTrap::setArmorDamageReduction(int n) {
+void			ScavTrap::setArmorDamageReduction(int n) {
 	this->armorDamageReduction = n;
 }
 
-void			FragTrap::setName(std::string str) {
+void			ScavTrap::setName(std::string str) {
 	this->name = str;
 }
 
-int				FragTrap::getHitPoints(void) {
+int				ScavTrap::getHitPoints(void) {
 	return (this->hitPoints);
 }
 
-int				FragTrap::getMaxHitPoints(void) {
+int				ScavTrap::getMaxHitPoints(void) {
 	return (this->maxHitPoints);
 }
 
-int				FragTrap::getEnergyPoints(void) {
+int				ScavTrap::getEnergyPoints(void) {
 	return (this->energyPoints);
 }
 
-int				FragTrap::getMaxEnergyPoints(void) {
+int				ScavTrap::getMaxEnergyPoints(void) {
 	return (this->maxEnergyPoints);
 }
 
-int				FragTrap::getLevel(void) {
+int				ScavTrap::getLevel(void) {
 	return (this->level);
 }
 
-int				FragTrap::getMeleeAttackDamage (void) {
+int				ScavTrap::getMeleeAttackDamage (void) {
 	return (this->meleeAttackDamage);
 }
 
-int				FragTrap::getRangedAttackDamage (void) {
+int				ScavTrap::getRangedAttackDamage (void) {
 	return (this->rangedAttackDamage);
 }
 
-int				FragTrap::getArmorDamageReduction(void) {
+int				ScavTrap::getArmorDamageReduction(void) {
 	return (this->armorDamageReduction);
 }
 
-std::string		FragTrap::getName(void) {
+std::string		ScavTrap::getName(void) {
 	return (this->name);
 }
 
-void			FragTrap::rangedAttack(std::string const & target) {
+void			ScavTrap::rangedAttack(std::string const & target) {
 	int		damage = this->rangedAttackDamage;
 
-	std::cout<<"FR4G-TP <"<<this->getName()<<"> attacks <"<<target<<"> at range, causing <"<<damage<<"> points of damage !"<<std::endl;
+	std::cout<<"FR4G-TP <"<<this->getName()<<"> attacks <"<<target<<"> at range, causing <"<<damage<<"> points of damage ! "<<"\"Throwing grenade!\""<<std::endl;
 }
 
-void			FragTrap::meleeAttack(std::string const & target) {
+void			ScavTrap::meleeAttack(std::string const & target) {
 	int		damage = this->meleeAttackDamage;
 
-	std::cout<<"FR4G-TP <"<<this->getName()<<"> attacks <"<<target<<"> at range, causing <"<<damage<<"> points of damage !"<<std::endl;
+	std::cout<<"FR4G-TP <"<<this->getName()<<"> attacks <"<<target<<"> at range, causing <"<<damage<<"> points of damage ! "<<"\"Hyah!\""<<std::endl;
 }
 
-void			FragTrap::takeDamage(unsigned int amount) {
+void			ScavTrap::takeDamage(unsigned int amount) {
 	std::cout<<"AAAAHHHHH!"<<std::endl;
 	int		hp = this->hitPoints;
 	hp -= (amount - this->armorDamageReduction);
@@ -146,7 +146,7 @@ void			FragTrap::takeDamage(unsigned int amount) {
 	}
 }
 
-void			FragTrap::beRepaired(unsigned int amount) {
+void			ScavTrap::beRepaired(unsigned int amount) {
 	std::cout<<"Hahaha... I ascend!"<<std::endl;
 	int		hp = this->hitPoints;
 	hp += amount;
@@ -157,8 +157,8 @@ void			FragTrap::beRepaired(unsigned int amount) {
 	}
 }
 
-FragTrap	&FragTrap::operator=(const FragTrap &f) {
-	//const FragTrap allows you to not use the getters -> safe.
+ScavTrap	&ScavTrap::operator=(const ScavTrap &f) {
+	//const ScavTrap allows you to not use the getters -> safe.
 	this->hitPoints = f.hitPoints;
 	this->maxHitPoints = f.maxHitPoints;
 	this->energyPoints = f.energyPoints;
@@ -171,22 +171,25 @@ FragTrap	&FragTrap::operator=(const FragTrap &f) {
 	return (*this);
 }
 
-void		FragTrap::vaulthunter_dot_exe(std::string const & target) {
+void		ScavTrap::challengeNewcomer(std::string const & target) {
 
-	std::string attacks[8] = {"I am a tornado of death and bullets!", 
-								"Ha ha ha! Fall before your robot overlord!",
-								"Is it dead? Can, can I open my eyes now?",
-								"Is that what people look like inside?",
-								"Hey everybody, check out my package!",
-								"Recompiling my combat code!",
-								"I have an IDEA!",
-								"Dance battle! Or, you know... regular battle."};
-	int	i = (std::rand() % ( 8));
+	std::string challenges[11] = {"You versus me! Me versus you! Either way!",
+								"I will prove to you my robotic superiority!",
+								"Dance battle! Or, you know... regular battle.",
+								"Man versus machine! Very tiny streamlined machine!",
+								"Care to have a friendly duel?",
+								"I can take ya! ... I think.",
+								"Ow, what was that for?",
+								"Oh, it's on now!",
+								"You wanna fight with me?! Put 'em up! ... Put 'em up?",
+								"A million baddies, and you wanna hit me? Aww!",
+								"Now? But I... I just... okay..."};
+	int	i = (std::rand() % 11);
 
 	if (this->energyPoints == 0 || this->energyPoints < 25) {
 		std::cout<< "I can see through time..."<<std::endl;
 	} else {
-		std::cout<<"FR4G-TP <"<<this->getName()<<"> attacks <"<<target<<"> \""<<attacks[i]<<"\""<<std::endl;
+		std::cout<<"FR4G-TP <"<<this->getName()<<"> challenges <"<<target<<"> \""<<challenges[i]<<"\""<<std::endl;
 		this->energyPoints -= 25;
 	}
 }
