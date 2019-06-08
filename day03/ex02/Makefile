@@ -6,7 +6,7 @@
 #    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/07 13:16:57 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/08 17:58:14 by shillebr         ###   ########.fr        #
+#    Updated: 2019/06/08 17:57:55 by shillebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@
 NAME     := fixed
 
 # Sources and objects.
-SRCS     := FragTrap.cpp ScavTrap.cpp main.cpp
-HDRS     := ScavTrap.hpp FragTrap.hpp
+SRCS     := ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
+HDRS     := ScavTrap.hpp FragTrap.cpp ClapTrap.cpp 
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
