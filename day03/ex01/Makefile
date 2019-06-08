@@ -6,13 +6,13 @@
 #    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/07 13:16:57 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/08 17:58:14 by shillebr         ###   ########.fr        #
+#    Updated: 2019/06/08 18:20:16 by shillebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # Name of the program.
-NAME     := fixed
+NAME     := claptrap
 
 # Sources and objects.
 SRCS     := FragTrap.cpp ScavTrap.cpp main.cpp

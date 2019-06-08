@@ -6,7 +6,7 @@
 #    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/07 13:16:57 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/08 18:19:35 by shillebr         ###   ########.fr        #
+#    Updated: 2019/06/08 18:18:52 by shillebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@
 NAME     := claptrap
 
 # Sources and objects.
-SRCS     := ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
-HDRS     := ScavTrap.hpp FragTrap.hpp ClapTrap.hpp 
+SRCS     := ClapTrap.cpp FragTrap.cpp ScavTrap.cpp NinjaTrap.cpp  main.cpp
+HDRS     := ScavTrap.hpp FragTrap.hpp ClapTrap.hpp NinjaTrap.hpp 
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
