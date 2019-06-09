@@ -1,50 +1,75 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/06/08 10:42:28 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/08 10:43:52 by shillebr         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# Colour
+C = \033[0;36m
+R = \033[0;91m
+P = \033[1;95m
+G = \033[4;32m
+E = \033[0m
 
-# Name of the program.
-NAME     := fixed
+# Compiler
+CXX          := clang++
 
-# Sources and objects.
-SRCS     := main.cpp
-# HDRS     := Fixed.hpp
-OBJS     := $(SRCS:.cpp=.o)
+# The Target Binary Program
+TARGET      := ft_retro
 
-# Define all the compiling flags.
-CXX      := clang++
-CXXFLAGS := -std=c++98 -Wall -Werror -Wextra
+# The Directories, Source, Includes, Objects and Binary
+SRCDIR      := src
+INCDIR      := inc
+OBJDIR      := obj
+TARGETDIR   := bin
+SRCEXT      := cpp
+DEPEXT      := d
+OBJEXT      := o
 
-# Compile and create everything.
-all: $(NAME)
+#Flags, Libraries and Includes
+CXXFLAGS    := -std=c++98 -Wall -Werror -Wextra -pedantic
+LIB         := -lncurses
+INC         := -I$(INCDIR) -I/usr/local/include
+INCDEP      := -I$(INCDIR)
 
-# Compile the program with the objects.
-# $(NAME): $(OBJS) $(HDRS)
-$(NAME): $(OBJS)
-	@$(CXX) $(OBJS) -o $@
+SRCS     := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
+OBJS     := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SRCS:.$(SRCEXT)=.$(OBJEXT)))
 
-# This won't run if the source files don't exist or are not modified.
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -o $@ -c $<
+#Defauilt Make
+all: directories $(TARGET)
 
-# Rule to remove all the object files.
+# Rebuild
+re: fclean all
+
+# Make the Directories
+directories:
+	@mkdir -p $(OBJDIR)
+
+# Cleaners
+# clean
 clean:
-	@rm -f $(OBJS)
+	@$(RM) -rf $(OBJDIR)
+	@echo "$(R)Cleaned!$(E)"
 
-# Rule to remove everything that has been created by the makefile.
-fclean: clean
-	@rm -f $(NAME)
+# fclean
+fclean:     clean
+	@$(RM) -rf $(TARGET)
+	@echo "$(P)Cleaned Everything!$(E)"
 
-# Rule to re-make everything.
-re:     fclean all
+# debug:
+	# clang++ EntityDebug.cpp ./src/Entity.cpp ./src/Player.cpp ./src/Bullet.cpp ./src/Enemy.cpp -o debugEntity
 
-# Makes sure that gnu make will still run even if files called
-# clean / fclean / all and re already exist in the directory
-.PHONY: all clean fclean format re
+#Pull in dependency info for *existing* .o files
+-include $(OBJS:.$(OBJEXT)=.$(DEPEXT))
+
+#Link
+$(TARGET): $(OBJS)
+	$(CXX) -o $(TARGET) $^ $(LIB)
+	@echo "$(G)Done!$(E)"
+
+#Compile
+$(OBJDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
+	@mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) $(INC) -c -o $@ $<
+	@$(CXX) $(CXXFLAGS) $(INCDEP) -MM $(SRCDIR)/$*.$(SRCEXT) > $(OBJDIR)/$*.$(DEPEXT)
+	@cp -f $(OBJDIR)/$*.$(DEPEXT) $(OBJDIR)/$*.$(DEPEXT).tmp
+	@sed -e 's|.*:|$(OBJDIR)/$*.$(OBJEXT):|' < $(OBJDIR)/$*.$(DEPEXT).tmp > $(OBJDIR)/$*.$(DEPEXT)
+	@sed -e 's/.*://' -e 's/\\$$//' < $(OBJDIR)/$*.$(DEPEXT).tmp | fmt -1 | sed -e 's/^ *//' -e 's/$$/:/' >> $(OBJDIR)/$*.$(DEPEXT)
+	@rm -f $(OBJDIR)/$*.$(DEPEXT).tmp
+
+# Redundency | GNU still runs if files with names below exist
+.PHONY: all re clean fclean
