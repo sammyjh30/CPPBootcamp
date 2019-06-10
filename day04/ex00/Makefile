@@ -6,10 +6,9 @@
 #    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/07 13:16:57 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/10 17:05:11 by shillebr         ###   ########.fr        #
+#    Updated: 2019/06/10 18:19:53 by shillebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 # Name of the program.
 NAME		:= fixed
