@@ -7,17 +7,17 @@
 class Victim
 {
 	private:
-		Victim(void);             //Still following Coplien's form. Not allowing the use of this constructor by keeping it private.
 		std::string		_name;
 
 	public:
+		Victim(void);										//Still following Coplien's form. Not allowing the use of this constructor by keeping it private.
 		Victim(std::string name);
 		Victim(const Victim &obj);
 		~Victim(void);
 		void			setName(std::string name);
-		std::string		getName(void);
+		std::string		getName(void) const;
 		Victim			&operator=(Victim const &obj);
-		virtual void	getPolymorphed(void);           // virtual so that Peon can inherit Victim, but can override this function
+		virtual void	getPolymorphed(void) const;				// virtual so that Peon can inherit Victim, but can override this function
 };
 
 //outputstream - afterwards because we need Victim to be defined.

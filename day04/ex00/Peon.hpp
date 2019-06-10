@@ -16,7 +16,7 @@ class Peon : public Victim
 		Peon(const Peon &obj);
 		~Peon(void);
 		
-		virtual void            getPolymorphed(void) const;           
+		virtual void			getPolymorphed(void) const;           
 };
 
 #endif
