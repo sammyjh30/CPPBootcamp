@@ -6,7 +6,7 @@
 /*   By: sammyjh30 <sammyjh30@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 13:18:55 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/11 17:33:03 by sammyjh30        ###   ########.fr       */
+/*   Updated: 2019/06/11 23:22:59 by sammyjh30        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,23 @@ class Form
 				GradeTooLowException	&operator=(const GradeTooLowException& obj);
 				virtual const char* what() const throw();
 		};
+
+		// class NotSignedException : public std::exception
+		// {
+		// 	public:
+		// 		NotSignedException(void);
+		// 		NotSignedException(const NotSignedException &src);
+
+		// 		virtual ~NotSignedException(void) throw();
+
+		// 		NotSignedException    &operator= (const NotSignedException &obj);
+
+		// 		virtual const char    *what(void) const throw();
+		// };
+
+		// void setTarget(std::string target);
+		//  std::string getTarget(void) const;
+		//  virtual void execute(const Bureaucrat &executor) const = 0;
 
 };
 
