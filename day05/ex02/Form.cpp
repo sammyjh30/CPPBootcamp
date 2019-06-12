@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammyjh30 <sammyjh30@student.42.fr>        +#+  +:+       +#+        */
+/*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 13:18:58 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/11 17:37:21 by sammyjh30        ###   ########.fr       */
+/*   Updated: 2019/06/12 08:36:42 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,25 @@ const char* Form::GradeTooLowException::what() const throw()
 
 //////////////////////////////////////////////////
 
+//	NotSignedException
+
+//////////////////////////////////////////////////
+Form::NotSignedException::NotSignedException(void) : std::exception() { return; }
+Form::NotSignedException::NotSignedException(const NotSignedException &obj) {
+	*this = obj;
+	return;
+}
+
+Form::NotSignedException::~NotSignedException(void) throw() {return;}
+
+Form::NotSignedException		&Form::NotSignedException::operator= (const NotSignedException &obj) {
+	(void)obj;
+	return (*this);
+}
+
+const char*		Form::NotSignedException::what(void) const throw() {
+	return("Not signed.");
+}
 
 //	Form
 
@@ -91,12 +110,20 @@ void					Form::setSigned(bool s) {
 	this->_signed = s;
 }
 
+void					Form::setTarget(std::string target) {
+	this->_target = target;
+}
+
 std::string				Form::getName(void) const {
 	return (this->_name);
 }
 
 bool					Form::getSigned(void) const {
 	return(this->_signed);
+}
+
+std::string				Form::getTarget(void) const {
+	return (this->_target);
 }
 
 int						Form::getGradeToSign(void) const {
@@ -107,7 +134,7 @@ int						Form::getGradeToExecute(void) const {
 	return (this->_gradeToExecute);
 }
 
-Form	&Form::operator=(const Form& obj) {
+Form					&Form::operator=(const Form& obj) {
 	this->_signed = obj._signed;
 	return (*this);
 }
@@ -120,6 +147,14 @@ void					Form::beSigned(Bureaucrat const &obj) {
 	}
 }
 
+//execute 
+void					Form::execute(const Bureaucrat &obj) const {
+	if  (obj.getGrade() > this->getGradeToExecute()) {
+		throw Form::GradeTooLowException();
+	} else if (!this->_signed) {
+		throw Form::NotSignedException();
+	}
+}
 
 //////////////////////////////////////////////////
 
