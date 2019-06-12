@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sammyjh30 <sammyjh30@student.42.fr>        +#+  +:+       +#+        */
+/*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 17:45:36 by sammyjh30         #+#    #+#             */
-/*   Updated: 2019/06/11 23:23:01 by sammyjh30        ###   ########.fr       */
+/*   Updated: 2019/06/12 11:39:14 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 class ShrubberyCreationForm : public Form
 {
 	private:
-		static int const			_sign;
-		static int const			_exec; 
+		int						_sign; //145
+		int						_exec; //137
 
 	public:
 		ShrubberyCreationForm(void);
@@ -30,9 +30,14 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm(ShrubberyCreationForm const &obj);
 		~ShrubberyCreationForm(void);
 
-		ShrubberyCreationForm	&operator=(ShrubberyCreationForm const &obj);
+		int							getSign(void);
+		int							getExec(void);
 
-		//execute
+		ShrubberyCreationForm		&operator=(ShrubberyCreationForm const &obj);
+
+		//execute - Action : Create a file called <target>_shrubbery, and write ASCII trees inside it, in the current directory.
+		virtual void 				execute(const Bureaucrat &obj) const;
+
 };
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sammyjh30 <sammyjh30@student.42.fr>        +#+  +:+       +#+         #
+#    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/07 13:16:57 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/11 17:31:54 by sammyjh30        ###   ########.fr        #
+#    Updated: 2019/06/12 11:34:48 by shillebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@
 NAME     := bureaucrat
 
 # Sources and objects.
-SRCS     := Bureaucrat.cpp Form.cpp main.cpp
-HDRS     := Bureaucrat.hpp Form.hpp
+SRCS     := Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp main.cpp
+HDRS     := Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
