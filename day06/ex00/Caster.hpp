@@ -20,7 +20,25 @@ class Caster
 		Caster(Caster const &obj);
 		~Caster(void);
 		Caster			&operator=(const Caster& obj);
-		void			cast(double const &value);
+
+		void			tryChar(double n); //try - catch
+		void			tryInt(double n); //try - catch
+		void			tryFloat(double n); //try - catch
+		void			tryDouble(double n); //try - catch
+		char			castToChar(double n); //if - throw
+		int				castToInt(double n);
+		float			castToFloat(double n);
+		double			castToDouble(double n);
+
+		//Classes for error handling
+		class Impossible
+		{
+
+		};
+		class NonDiplayable //spell check name
+		{
+
+		};
 };
 
 #endif

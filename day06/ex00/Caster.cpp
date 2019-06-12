@@ -24,9 +24,44 @@ Caster			&Caster::operator=(const Caster& obj) {
 	(void)obj;
 	return(*this);
 }
-void			Caster::cast(double const &value) {
-	//Do checks for char
-	//Do checks for int
-	//Do checks for float
-	//Do checks for double
+
+
+char
+Caster::castToChar(double n)
+{
+    char    c;
+
+    if (std::isnan(d) == true)
+    {
+        throw (Caster::Impossible());
+    }
+    c = static_cast<char>(d);
+    if (std::isprint(c) == false)
+    {
+        throw (Caster::NonDisplayable());
+    }
+    return (c);
+}
+
+int					Caster::castToInt(double n)
+{
+    if (std::isnan(d) == true || std::isinf(d) == true)
+    {
+        throw (Caster::Impossible());
+    }
+    if (d > static_cast<double>(INT_MAX) || d < static_cast<double>(INT_MIN))
+    {
+        throw (Caster::Impossible());
+    }
+    return (static_cast<int>(d));
+}
+
+float				Caster::castToFloat(double n)
+{
+    return (static_cast<float>(d));
+}
+
+double				Caster::castToDouble(double n)
+{
+     return (static_cast<double>(d));
 }
