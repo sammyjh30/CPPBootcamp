@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   iter.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sammyjh30 <sammyjh30@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 13:24:24 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/13 14:03:16 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/13 15:32:58 by sammyjh30        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 template <typename I>
-void	iter(I *arr,int len, I (*f)(I const &)) {
+void	iter(I* arr,unsigned int const &len, void (*f)(I const &ref)) {
 	if (arr && len > 0) {
-		for (int i=0; i < len; i++){
+		for (unsigned int i=0; i < len; i++){
 			f(arr[i]);
 		}
 	}
