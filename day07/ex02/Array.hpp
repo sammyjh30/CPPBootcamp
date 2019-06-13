@@ -6,7 +6,7 @@
 /*   By: sammyjh30 <sammyjh30@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 15:46:32 by sammyjh30         #+#    #+#             */
-/*   Updated: 2019/06/13 17:59:25 by sammyjh30        ###   ########.fr       */
+/*   Updated: 2019/06/13 22:17:13 by sammyjh30        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Array
 		T					&operator[](unsigned int i);
 	private:
 		unsigned int		_length; // Keeps the size, so that we don't take variables in the size function
+		T					*_arr;
 
 };
 
