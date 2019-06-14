@@ -6,17 +6,17 @@
 #    By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/13 09:15:16 by shillebr          #+#    #+#              #
-#    Updated: 2019/06/13 12:13:39 by shillebr         ###   ########.fr        #
+#    Updated: 2019/06/14 10:50:52 by shillebr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # Name of the program.
-NAME		:= identify
+NAME		:= array
 
 # Sources and objects.
-SRCS		:= Base.cpp A.cpp B.cpp C.cpp main.cpp
-HDRS		:= Base.hpp A.cpp B.hpp C.hpp
+SRCS		:= main.cpp
+HDRS		:= Array.hpp
 OBJS		:= $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
