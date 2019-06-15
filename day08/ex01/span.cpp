@@ -69,9 +69,15 @@ int				Span::shortestSpan(void) {
 	}
 	std::vector<int> temp = this->_vector; 
 	std::sort(temp.begin(), temp.end());
-	for (int i = 1; i < temp.size(); i++) {
-		
+	int		min;
+	if (temp[0] && temp[1]) {
+		min = abs(temp[1] - temp[0]);
 	}
+	for (int i = 1; i < temp.size(); i++) {
+		if (abs(temp[i-1]-temp[i]) < min)
+			min = abs(temp[i-1]-temp[i]);
+	}
+	return min;
 }
 
 int				Span::longestSpan(void) {
