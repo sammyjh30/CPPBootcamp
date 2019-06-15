@@ -13,13 +13,22 @@
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
+# include <iostream>
+# include <list>
+
 class Span
 {
 	private:
+		std::list<int> 		_list;
 	public:
 		Span(void);
 		Span(unsigned int N);
+		Span(unsigned int N, int *nums);
 		~Span(void);
-		Span		&operator=(const Span &obj);
+		Span			&operator=(const Span &obj);
+
+		void			addNumber(int n);  //Will have a try catch for if it exceeds N
+		std::string		shortestSpan(void); //if no span to find, throw exception
+		std::string		longestSpan(void);
 };
 #endif
