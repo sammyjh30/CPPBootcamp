@@ -6,7 +6,7 @@
 /*   By: shillebr <shillebr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 17:33:41 by shillebr          #+#    #+#             */
-/*   Updated: 2019/06/14 18:24:21 by shillebr         ###   ########.fr       */
+/*   Updated: 2019/06/15 17:53:54 by shillebr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Span
 		Span			&operator=(const Span &obj);
 
 		void			addNumber(int n);  //Will have a try catch for if it exceeds N
-		void			addNumbers(int *nums);  //Will have a try catch for if it exceeds N
+		void			addNumbers(int *nums, int size);  //Will have a try catch for if it exceeds N
 		int				shortestSpan(void); //if no span to find, throw exception
 		int				longestSpan(void);
 };
