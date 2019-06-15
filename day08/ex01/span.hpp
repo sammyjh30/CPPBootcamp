@@ -14,21 +14,27 @@
 # define SPAN_HPP
 
 # include <iostream>
-# include <list>
+# include <vector>
+# include <algorithm>
+# include <numeric>
 
+// https://www.fluentcpp.com/2017/10/13/size-capacity-stl-containers//
+// Vectors have a size and capacity -> easier to add
 class Span
 {
 	private:
-		std::list<int> 		_list;
+		std::vector<int> 		_vector;
 	public:
 		Span(void);
 		Span(unsigned int N);
 		Span(unsigned int N, int *nums);
+		Span(Span const &obj);
 		~Span(void);
 		Span			&operator=(const Span &obj);
 
 		void			addNumber(int n);  //Will have a try catch for if it exceeds N
-		std::string		shortestSpan(void); //if no span to find, throw exception
-		std::string		longestSpan(void);
+		void			addNumbers(int *nums);  //Will have a try catch for if it exceeds N
+		int				shortestSpan(void); //if no span to find, throw exception
+		int				longestSpan(void);
 };
 #endif

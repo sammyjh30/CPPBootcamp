@@ -13,35 +13,75 @@
 #include "span.hpp"
 
 Span::Span(void) {
-	std::list<int> list(0); 
-	this->_list = list;
+	std::vector<int> vector(0); 
+	this->_vector = vector;
 }
 
 Span::Span(unsigned int N) {
-	std::list<int> list(N); 
-	this->_list = list;
+	std::vector<int> vector(N); 
+	this->_vector = vector;
 }
 
 Span::Span(unsigned int N, int *nums) {
-
+	std::vector<int> vector(N); 
+	this->_vector = vector;
+	for (int i=0; i < sizeof(nums); i++) {
+		if (this->_vector.size() < this->_vector.capacity()) {
+			this->_vector.push_back(nums[i]);
+		} else {
+			throw std::range_error("Error: Capacity exceeded.");
+		}
+	}
 }
 
-Span::~Span(void) {
-
+Span::Span(Span const &obj) {
+	*this = obj;
 }
+
+Span::~Span(void) { return; }
 
 Span			&Span::operator=(const Span &obj) {
-
+	this->_vector = obj._vector;
+	return (*this);
 }
 
 void			Span::addNumber(int n) {
-	if (this->_list.size() < this->_list.)
+	if (this->_vector.size() < this->_vector.capacity()) {
+		this->_vector.push_back(n);
+	} else {
+		throw std::range_error("Error: Capacity exceeded.");
+	}
 }
 
-std::string		Span::shortestSpan(void) {
-
+void			Span::addNumbers(int *nums) {
+	for (int i=0; i < sizeof(nums); i++) {
+		if (this->_vector.size() < this->_vector.capacity()) {
+			this->_vector.push_back(nums[i]);
+		} else {
+			throw std::range_error("Error: Capacity exceeded.");
+		}
+	}
 }
 
-std::string		Span::longestSpan(void) {
+int				Span::shortestSpan(void) {
+	if (this->_vector.size() < 2) {
+		throw std::range_error("Error: Cannot get span, size of vector too small.");
+	}
+	std::vector<int> temp = this->_vector; 
+	std::sort(temp.begin(), temp.end());
+	for (int i = 1; i < temp.size(); i++) {
+		
+	}
+}
 
+int				Span::longestSpan(void) {
+	if (this->_vector.size() < 2) {
+		throw std::range_error("Error: Cannot get span, size of vector too small.");
+	}
+	std::vector<int> temp = this->_vector; 
+	// sort, then get the difference from max or min
+	std::sort(temp.begin(), temp.end());
+	int max = *(std::max_element(temp.begin(), temp.end()));
+	int min = *(std::min_element(temp.begin(), temp.end()));
+	return (max - min);
 }
